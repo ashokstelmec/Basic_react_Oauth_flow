@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+// import { useGoogleLogin } from 'react-google-login';
+import LoginButton from "./component/login";
+import LogoutButton from "./component/logout";
+import { useState, useEffect } from "react";
+import { gapi } from "gapi-script";
+import "./App.css";
 
-function App() {
+const clientId =
+  "429585455617-9r1sioquk753jtt8b65ib944i83ibnig.apps.googleusercontent.com";
+
+const App = () => {
+  const [loginData, setLoginData] = useState(null);
+
+  useEffect(() => {
+    const start = () => {
+      gapi.client.init({
+        clientId: clientId,
+        scope: "",
+      });
+    };
+
+    gapi.load("client:auth2", start);
+  }, []);
+
+  // var accessToken = gapi.auth.getToken().access_token;
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {loginData == null ? (
+        <LoginButton setLoginData={setLoginData} />
+      ) : (
+        <LogoutButton  setLoginData={setLoginData}/>
+      )}
     </div>
   );
-}
+};
 
 export default App;
