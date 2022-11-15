@@ -1,4 +1,4 @@
-##BASIC AUTHENTICATION FLOW OF ANY WEB APP. HERE GOOGLE OAUTH CAN BE REPLACED BY A NORMAL BACKEND ALSO
+## BASIC AUTHENTICATION FLOW OF ANY WEB APP. HERE GOOGLE OAUTH CAN BE REPLACED BY A NORMAL BACKEND ALSO
 
 1. Initially Login Button will be visible on the navbar of the home page.
 2. On Clicking Login button  an API request will be made
