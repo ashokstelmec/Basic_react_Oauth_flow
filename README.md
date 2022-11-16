@@ -5,7 +5,7 @@
 3. Then API will check our ID from GOOGLE using Google OAuth 
 4. and It will save/set our data (using localStorage.setItem method) in the Browser Local storage
 5. Then it will render the Logout button and hide the Login button based on if local storage has data or null value
-6. After clicking the Logout button, we will again redirect to the initial page.
+6. After clicking the Logout button, we will redirect to the initial page.
 
 ## HOW TO DO OAUTH IN REACT APP
 1. XYZ
